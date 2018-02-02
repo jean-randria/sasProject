@@ -1,0 +1,24 @@
+<div class="block-revealer__content">  
+  <div class="folder-block-inner" >
+    <!-- <h1>{{directoriesList|json}}</h1>-->
+    <div *ngFor="let folder of foldersList;let i = index" 
+          (click)="gotoFileListe($event,i);clicked = (clicked === folder ? null :folder)"
+          [class.uk-card-primary]="clicked === folder" 
+
+          class="folder uk-card uk-card-small uk-card-default uk-card-body">
+      <div class="uk-grid-collapse" uk-grid>
+        <div class="uk-width-auto@m">
+            <!--<img src="../../../../assets/img/folder.png" alt="">-->
+            <img src="{{folder.path}}\icon.png" alt="">
+        </div>
+        <div class="uk-width-expand@m">
+          <h5 class="uk-text-truncate" >{{folder.name}}</h5>
+        </div>
+        <div class="uk-width-auto@m uk-flex uk-flex-middle">
+          <span class="uk-label" >{{folder.numberOfFiles}} fichiers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   

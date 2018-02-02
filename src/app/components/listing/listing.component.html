@@ -1,0 +1,20 @@
+<div class="block-revealer__content">  
+  <div class="file-block-inner">
+    <div *ngFor="let File of fileList;let i = index" 
+        (click)="gotoFileView($event,i);clicked = (clicked === File ? null :File)"
+        [class.uk-card-primary]="clicked === File" 
+        class="file uk-card uk-card-small uk-card-default uk-card-body uk-invisible">
+      <div  class="uk-grid-collapse" uk-grid>
+        <div class="uk-width-auto@m">
+          <img src="./../../../assets/img/pdf.png" alt="">
+        </div>
+        <div class="uk-width-expand@m">
+          <h5 class="uk-text-truncate">{{ File.name }}</h5>
+        </div>
+        <div class="uk-width-auto@m uk-flex uk-flex-middle">
+          <p class="uk-text-muted">16/01/2018</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

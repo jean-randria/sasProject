@@ -1,0 +1,11 @@
+<section id="home">
+  <div class="home-inner">
+    <!--Header -->
+    <app-header></app-header>
+    <div class="content uk-grid-collapse" uk-grid>
+      <app-sidebar [foldersList]="folders" (onFolderSelectedEvt)="onFolderSelectChange($event)" class="uk-width-1-4@m folder-block"></app-sidebar>
+      <app-listing [fileList]="filesArr" (onFileSelectedEvt)="onFileSelectChange($event)" class="uk-width-1-4@m file-block"></app-listing>
+      <app-fileview [fileUrl]="urlOfSelectedFile" class="uk-width-expand@m"></app-fileview>
+    </div>
+  </div>
+</section>  

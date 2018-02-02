@@ -1,0 +1,22 @@
+<div class="iframe-block">
+  <div class="iframe-block-inner">
+      <pdf-viewer [src]="fileUrl"
+                    [(page)]="page"
+                    [rotation]="rotation"
+                    [original-size]="originalSize"
+                    [fit-to-page]="fitToPage"
+                    (after-load-complete)="afterLoadComplete($event)"
+                    [zoom]="zoom"
+                    [show-all]="showAll"
+                    [stick-to-page]="stickToPage"
+                    [render-text]="renderText"
+                    [external-link-target]="'blank'"
+                    [autoresize]="autoresize"
+                    (error)="onError($event)"
+                    (on-progress)="onProgress($event)"
+                    style="display: block; max-width: 100%;">
+    </pdf-viewer>
+    <!--<iframe *ngIf="fileUrl" type="application/pdf" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=test.pdf" frameborder="0"></iframe> Not work-->
+  </div>
+</div>
+ 
